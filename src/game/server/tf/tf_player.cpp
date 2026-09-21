@@ -18458,21 +18458,21 @@ void CTFPlayer::DoTauntAttack( void )
 				else if ( iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_A || iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_B || iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_C || iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_KILL )
 				{
 					if ( iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_A || iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_C ) {
-						AngleVectors(QAngle(-45, m_angEyeAngles[YAW] + 35, 0), &vecForward);
+						AngleVectors(QAngle(-55, m_angEyeAngles[YAW] + 35, 0), &vecForward);
 					}
 					else 
 					{
-						AngleVectors(QAngle(-45, m_angEyeAngles[YAW] - 35, 0), &vecForward);
+						AngleVectors(QAngle(-55, m_angEyeAngles[YAW] - 35, 0), &vecForward);
 					}
 					if ( iTauntAttack == TAUNTATK_HEAVY_PUNCHOUT_KILL )
 					{
-						pList[i]->TakeDamage(CTakeDamageInfo( this, this, GetActiveTFWeapon(), vecForward * 25000, vecPos, 450.0f, DMG_CLUB, TF_DMG_CUSTOM_TAUNTATK_PUNCHOUT ) );
+						pList[i]->TakeDamage(CTakeDamageInfo( this, this, GetActiveTFWeapon(), vecForward * 30000, vecPos, 450.0f, DMG_CLUB, TF_DMG_CUSTOM_TAUNTATK_PUNCHOUT ) );
 						EmitSound( "Weapon_BoxingGloves.CritHit" );
 					}
 					else 
 					{
 						// No physics push so it doesn't push the player out of the range of the punch
-						pList[i]->TakeDamage(CTakeDamageInfo( this, this, GetActiveTFWeapon(), vecForward * 2500, vecPos, 40.0f, DMG_CLUB | DMG_PREVENT_PHYSICS_FORCE, TF_DMG_CUSTOM_TAUNTATK_PUNCHOUT ) );
+						pList[i]->TakeDamage(CTakeDamageInfo( this, this, GetActiveTFWeapon(), vecForward * 15000, vecPos, 40.0f, DMG_CLUB | DMG_PREVENT_PHYSICS_FORCE, TF_DMG_CUSTOM_TAUNTATK_PUNCHOUT ) );
 						EmitSound( "Weapon_BoxingGloves.HitFlesh" );
 					}
 				}
